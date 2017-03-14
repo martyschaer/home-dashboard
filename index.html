@@ -5,11 +5,20 @@
     <title>home-dashboard</title>
     <script src="js/jquery.min.js"></script>
     <script src="resources/creds.js"></script>
+    <script src="model/UrlProvider.js"></script>
 </head>
 <body>
 <script>
     $(document).ready(function(){
         console.log(window.creds);
+
+        $.ajax({
+            url: UrlProvider.hue(),
+            type: "GET",
+            success: function (data) {
+                console.log(data);
+            }
+        })
     });
 </script>
 </body>
